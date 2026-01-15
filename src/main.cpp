@@ -1,34 +1,42 @@
-#include "raylib.h"
+#include "../libs/raylib/src/raylib.h"
+#include "helper.hpp"
 
-constexpr auto SCREEN_WIDTH  = 800;
-constexpr auto SCREEN_HEIGHT = 450;
+#define RAYGUI_IMPLEMENTATION
+#include "../libs/raygui/src/raygui.h"
 
-int main()
-{
-    InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Window title");
-    SetTargetFPS(60);
+#include "main.hpp"
 
-    Texture2D texture = LoadTexture(ASSETS_PATH"test.png");
+// Window setup
+int screenWidth = 720;
+const int screenHeight = 480;
+bool windowShouldClose = false;
 
-    while (!WindowShouldClose())
-    {
-        BeginDrawing();
+// Loading resources
+std::string assetPathPrefix = "../assets/";
 
-        ClearBackground(RAYWHITE);
-
-        const int texture_x = SCREEN_WIDTH / 2 - texture.width / 2;
-        const int texture_y = SCREEN_HEIGHT / 2 - texture.height / 2;
-        DrawTexture(texture, texture_x, texture_y, WHITE);
-
-        const char* text = "OMG! IT WORKS!";
-        const Vector2 text_size = MeasureTextEx(GetFontDefault(), text, 20, 1);
-        DrawText(text, SCREEN_WIDTH / 2 - text_size.x / 2, texture_y + texture.height + text_size.y + 10, 20, BLACK);
-
-        EndDrawing();
+void init_app() {
+    if (std::filesystem::exists("../assets") == false) {
+        assetPathPrefix = "assets/";
     }
+    
+    // Load textures here
+    
+    
+    // InitAudioDevice();
+    // Load sounds/music here
+}
 
-    UnloadTexture(texture);
+bool app_loop() {
+    float relDt = GetFrameTime() * 60.0f; // Calculate delta time in relation to 60 frames per second
+    
+    BeginDrawing();
+        ClearBackground(BLACK);
+    EndDrawing();
+    
+    return !windowShouldClose;
+}
 
-    CloseWindow();
-    return 0;
+void deinit_app() {
+    // Unload sounds/music here
+    // CloseAudioDevice();
 }
