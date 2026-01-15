@@ -23,7 +23,7 @@ int main(void)
 #if defined(PLATFORM_WEB)
     InitWindow(getBrowserWindowWidth(), getBrowserWindowHeight(), PROJECT_NAME);
 #else
-    InitWindow(720, 480, "Cone Stacker");
+    InitWindow(720, 480, "MyRaylibProject");
     // Load icon here
     // Image windowIcon;
     // if (std::filesystem::exists("../assets") == false) {
