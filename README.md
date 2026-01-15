@@ -1,6 +1,6 @@
 # raylib-cpp-cmake-template
 
-![Native Build](https://github.com/gavinskycastle/MyRaylibProject/actions/workflows/nativebuild.yml/badge.svg) ![Web Build](https://github.com/gavinskycastle/MyRaylibProject/actions/workflows/webbuild.yml/badge.svg)
+![Native Build](https://github.com/gavinskycastle/raylib-cpp-cmake-template/actions/workflows/nativebuild.yml/badge.svg) ![Web Build](https://github.com/gavinskycastle/raylib-cpp-cmake-template/actions/workflows/webbuild.yml/badge.svg)
 
 Build system and instructions copied from [SasLuca/raylib-cpp-cmake-template](https://github.com/SasLuca/raylib-cpp-cmake-template)
 
