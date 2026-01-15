@@ -51,6 +51,7 @@ bool app_loop() {
 }
 
 void deinit_app() {
-    // Unload sounds/music here
+    // Unload assets here
+    UnloadTexture(nateTexture);
     // CloseAudioDevice();
 }
